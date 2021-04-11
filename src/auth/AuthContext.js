@@ -28,8 +28,6 @@ export const AuthProvider = ({ children }) => {
         name: usuario.nombre,
         email: usuario.email
       })
-
-      console.log('Autenticado!')
     }
 
     return resp.ok
@@ -49,8 +47,6 @@ export const AuthProvider = ({ children }) => {
         name: usuario.nombre,
         email: usuario.email
       })
-
-      console.log('Registrado!')
       return true
     }
 
@@ -85,8 +81,6 @@ export const AuthProvider = ({ children }) => {
         name: usuario.nombre,
         email: usuario.email
       })
-
-      console.log('Autenticado!')
       return true
     } else {
       setAuth({
@@ -101,7 +95,11 @@ export const AuthProvider = ({ children }) => {
   }, [])
 
   const logout = () => {
-
+    localStorage.removeItem('token')
+    setAuth({
+      checking: false,
+      logged: false
+    })
   }
 
   return (
