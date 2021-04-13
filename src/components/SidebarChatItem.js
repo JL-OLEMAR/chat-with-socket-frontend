@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const SidebarChatItem = () => {
+export const SidebarChatItem = ({ usuario }) => {
   return (
     <div className="chat_list">
       {/* active_chat */}
@@ -9,8 +9,12 @@ export const SidebarChatItem = () => {
           <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"/>
         </div>
         <div className="chat_ib">
-          <h5>Sunil Rajput <span className="chat_date">Dec 25</span></h5>
-          <p>Test, which is a new approach to have all solutions astrology under one roof.</p>
+          <h5>{usuario.nombre}</h5>
+          {
+            (usuario.online)
+              ? <span className="text-success">Online</span>
+              : <span className="text-danger">Offline</span>
+          }
         </div>
       </div>
     </div>
