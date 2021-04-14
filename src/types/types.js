@@ -1,3 +1,4 @@
 export const types = {
-  usuariosCargados: '[Chat] Usuarios cargados'
+  usuariosCargados: '[Chat] Usuarios cargados',
+  activarChat: '[Chat] Activar Chat'
 }
