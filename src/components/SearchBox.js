@@ -17,7 +17,6 @@ export const SearchBox = () => {
           >
             Salir
           </button>
-          {/* <input type="text" className="search-bar" placeholder="Buscar..."/> */}
         </div>
       </div>
     </div>
