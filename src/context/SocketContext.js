@@ -5,6 +5,7 @@ import { ChatContext } from './chat/ChatContext'
 import { useSocket } from '../hooks/useSocket'
 
 import { types } from '../types/types'
+import { scrollToBottonAnimated } from '../helpers/scrollToBotton'
 
 export const SocketContext = createContext()
 
@@ -37,13 +38,13 @@ export const SocketProvider = ({ children }) => {
 
   useEffect(() => {
     socket?.on('mensaje-personal', (mensaje) => {
-      // TODO: Dispatch de una acción
       dispatch({
         type: types.nuevoMensaje,
         payload: mensaje
       })
 
-      // TODO: Mover el scroll al final
+      // Mover el scroll al final
+      scrollToBottonAnimated('mensajes')
     })
   }, [socket, dispatch])
 
